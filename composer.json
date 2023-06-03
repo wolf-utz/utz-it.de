@@ -1,0 +1,13 @@
+{
+    "name": "wpu/website-utz-it-de",
+    "description": "My website",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wolf Utz",
+            "email": "wolf@utz-it.de"
+        }
+    ],
+    "require": {}
+}
