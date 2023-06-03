@@ -51,12 +51,5 @@ jobs:
         with:
           private-key: ${{ secrets.PRIVATE_KEY }}
           known-hosts: ${{ secrets.KNOWN_HOSTS }}
-          dep: mydeploy
+          dep: deploy ${{ github.event.inputs.deploy_env }} -v
           deployer-binary: deployer.phar
-
-#      - name: Deploy
-#        uses: deployphp/action@master
-#        with:
-#          private-key: ${{ secrets.PRIVATE_KEY }}
-#          known-hosts: ${{ secrets.KNOWN_HOSTS }}
-#          dep: deploy ${{ github.event.inputs.deploy_env }} -v
