@@ -43,8 +43,8 @@ jobs:
               StrictHostKeyChecking no
           END
 
-      - name: Set Up Deployer
-        run: curl -LO https://deployer.org/deployer.phar && mv deployer.phar bin/dep && sudo chmod +x bin/dep
+      - name: Download Deployer
+        run: curl -LO https://deployer.org/deployer.phar && sudo chmod +x deployer.phar
 
       - name: Deploy
         uses: deployphp/action@master
@@ -52,6 +52,7 @@ jobs:
           private-key: ${{ secrets.PRIVATE_KEY }}
           known-hosts: ${{ secrets.KNOWN_HOSTS }}
           dep: mydeploy
+          deployer-binary: deployer.phar
 
 #      - name: Deploy
 #        uses: deployphp/action@master
