@@ -1,4 +1,5 @@
 import:
+  - recipe/common.php
   - contrib/php-fpm.php
 
 config:
