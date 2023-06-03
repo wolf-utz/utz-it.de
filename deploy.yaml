@@ -1,27 +1,23 @@
-import:
+import: 
   - recipe/common.php
-  - contrib/php-fpm.php
 
 config:
-  application: 'utz-it.de'
-  repository: 'git@github.com:wolf-utz/utz-it.de.git'
-
-  remote_user: u112422749
-  base_deploy_path: '/'
-  keep_releases: 3
-  php_fpm_version: '8.1'
-
+  repository: 'https://github.com/wolf-utz/utz-it.de'
+  shared_files:
+    - .env
+  shared_dirs:
+    - uploads
+  writable_dirs:
+    - uploads
+  
 hosts:
   prod:
-    hostname: 'ip_of_prod_host'
+    hostname: 'access964308919.webspace-data.io'
     deploy_path: '{{base_deploy_path}}/utz-it.de'
 
 tasks:
-  deploy:
-    - deploy:prepare
-    - deploy:vendors
-    - deploy:publish
-    - php-fpm:reload
+  build:
+    - run: uptime  
 
 after:
   deploy:failed: deploy:unlock

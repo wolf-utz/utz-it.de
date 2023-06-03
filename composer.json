@@ -8,5 +8,8 @@
             "name": "Wolf Utz",
             "email": "wolf@utz-it.de"
         }
-    ]
+    ],
+    "require": {
+        "deployer/deployer": "^7.3"
+    }
 }
