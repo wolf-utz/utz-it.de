@@ -16,7 +16,7 @@ config:
 hosts:
   prod:
     hostname: 'access964308919.webspace-data.io'
-    deploy_path: '{{base_deploy_path}}/utz-it.de'
+    deploy_path: '/utz-it.de'
 
 tasks:
   deploy:
