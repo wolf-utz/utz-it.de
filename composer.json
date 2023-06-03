@@ -9,5 +9,7 @@
             "email": "wolf@utz-it.de"
         }
     ],
-    "require": {}
+    "require": {
+        "deployer/deployer": "^7.3"
+    }
 }
