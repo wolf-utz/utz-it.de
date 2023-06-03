@@ -2,13 +2,16 @@ import:
   - recipe/common.php
 
 config:
+  remote_user: u112422749
   repository: 'https://github.com/wolf-utz/utz-it.de'
-  shared_files:
-    - .env
-  shared_dirs:
-    - uploads
-  writable_dirs:
-    - uploads
+  keep_releases: 3
+  php_fpm_version: '8.1'
+#  shared_files:
+#    - .env
+#  shared_dirs:
+#    - uploads
+#  writable_dirs:
+#    - uploads
   
 hosts:
   prod:
@@ -16,8 +19,10 @@ hosts:
     deploy_path: '{{base_deploy_path}}/utz-it.de'
 
 tasks:
-  build:
-    - run: uptime  
+  deploy:
+    - deploy:prepare
+    - deploy:vendors
+    - deploy:publish
 
 after:
   deploy:failed: deploy:unlock

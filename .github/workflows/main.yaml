@@ -43,13 +43,13 @@ jobs:
               StrictHostKeyChecking no
           END
 
-      - name: Download Deployer
-        run: curl -LO https://deployer.org/deployer.phar && sudo chmod +x deployer.phar
+#      - name: Download Deployer
+#        run: curl -LO https://deployer.org/deployer.phar && sudo chmod +x deployer.phar
 
       - name: Deploy
-        uses: deployphp/action@master
+        uses: deployphp/action@v1
         with:
           private-key: ${{ secrets.PRIVATE_KEY }}
           known-hosts: ${{ secrets.KNOWN_HOSTS }}
           dep: deploy ${{ github.event.inputs.deploy_env }} -v
-          deployer-binary: deployer.phar
+          deployer-binary: vendor/bin/dep
