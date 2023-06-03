@@ -1,0 +1,26 @@
+import:
+  - contrib/php-fpm.php
+
+config:
+  application: 'utz-it.de'
+  repository: 'git@github.com:wolf-utz/utz-it.de.git'
+
+  remote_user: u112422749
+  base_deploy_path: '/'
+  keep_releases: 3
+  php_fpm_version: '8.1'
+
+hosts:
+  prod:
+    hostname: 'ip_of_prod_host'
+    deploy_path: '{{base_deploy_path}}/utz-it.de'
+
+tasks:
+  deploy:
+    - deploy:prepare
+    - deploy:vendors
+    - deploy:publish
+    - php-fpm:reload
+
+after:
+  deploy:failed: deploy:unlock
