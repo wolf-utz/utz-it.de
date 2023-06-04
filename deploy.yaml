@@ -16,7 +16,7 @@ config:
 hosts:
   prod:
     hostname: 'access964308919.webspace-data.io'
-    deploy_path: '/'
+    deploy_path: '/kunden/homepages/2/d964308919/htdocs/deployment'
 
 tasks:
   deploy:
