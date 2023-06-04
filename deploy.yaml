@@ -20,11 +20,8 @@ hosts:
 
 tasks:
   deploy:
-#    - deploy:prepare
-    - deploy:info
-    - deploy:setup
-    - deploy:release
-    - deploy:shared
+    - deploy:prepare
+    - deploy:vendors
     - deploy:publish
 
 after:
