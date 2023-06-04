@@ -1,18 +1,13 @@
 import: 
   - recipe/common.php
+  - contrib/php-fpm.php
 
 config:
   remote_user: u112422749
   repository: 'https://github.com/wolf-utz/utz-it.de'
   keep_releases: 3
   php_fpm_version: '8.1'
-#  shared_files:
-#    - .env
-#  shared_dirs:
-#    - uploads
-#  writable_dirs:
-#    - uploads
-  
+
 hosts:
   prod:
     hostname: 'access964308919.webspace-data.io'
@@ -23,6 +18,7 @@ tasks:
     - deploy:prepare
     - deploy:vendors
     - deploy:publish
+    - php-fpm:reload
 
 after:
   deploy:failed: deploy:unlock
