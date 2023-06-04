@@ -7,6 +7,7 @@ config:
   repository: 'https://github.com/wolf-utz/utz-it.de'
   keep_releases: 3
   php_fpm_version: '8.1'
+  php_version: '8.1
 
 hosts:
   prod:
