@@ -4,6 +4,7 @@ namespace Deployer;
 
 require 'recipe/common.php';
 require 'contrib/rsync.php';
+require 'recipe/symfony.php';
 
 host('prod')
     ->set('hostname', 'access964308919.webspace-data.io')
@@ -18,6 +19,7 @@ set('typo3_webroot', 'public');
 set('rsync_src', './');
 set('rsync', [
     'exclude' => [
+        '.idea',
         'deploy.php',
         '.docker*',
         '.editorconfig',
@@ -32,7 +34,8 @@ set('rsync', [
         'docker-compose.yml',
         'README.md',
         'CHANGELOG.md',
-        'node_modules'
+        'node_modules',
+        'phpunit.xml.dist'
     ],
     'exclude-file' => false,
     'include' => [],
@@ -57,6 +60,10 @@ task('symfony:cache:clear', function () {
     run('cd {{release_path}} && {{php_path}} vendor/bin/console --no-interaction cache:clear');
 });
 
+task('symfony:asset:install', function () {
+    run('cd {{release_path}} && {{php_path}} vendor/bin/console --no-interaction asset:install');
+});
+
 task('deploy', [
     'deploy:info',
     'deploy:setup',
@@ -67,6 +74,7 @@ task('deploy', [
     'deploy:shared',
     'symfony:doctrine:migrations:migrate',
     'symfony:cache:clear',
+    'symfony:asset:install',
     'deploy:publish'
 ])->desc('Deploy');
 
