@@ -21,6 +21,7 @@ set('rsync', [
         'deploy.php',
         '.docker*',
         '.editorconfig',
+        '.github',
         '.env*',
         '.git*',
         '.surf',
@@ -44,9 +45,18 @@ set('rsync', [
     'timeout' => 600,
 ]);
 
+task('symfony:doctrine:migrations:migrate', function () {
+    run('cd {{release_path}} && {{php_path}} vendor/bin/console --no-interaction doctrine:migrations:migrate');
+});
+
+task('symfony:cache:clear', function () {
+    run('cd {{release_path}} && {{php_path}} vendor/bin/console --no-interaction cache:clear');
+});
+
 task('composer:install', function () {
     runLocally('composer -q install --no-dev');
 });
+
 task('deploy', [
     'deploy:info',
     'deploy:setup',
@@ -55,6 +65,8 @@ task('deploy', [
     'deploy:release',
     'rsync',
     'deploy:shared',
+    'symfony:doctrine:migrations:migrate',
+    'symfony:cache:clear',
     'deploy:publish'
 ])->desc('Deploy');
 

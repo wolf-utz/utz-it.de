@@ -1,0 +1,13 @@
+form:
+  field:
+    label:
+      email: 'E-Mail'
+      name: 'Name <span class="text-muted">(optional)</span>'
+      message: 'Nachricht'
+      acceptDataPrivacy: 'Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und stimme ihr zu.'
+      submit: 'Absenden'
+    placeholder:
+      email: 'name@example.de'
+      name: 'Max Muster'
+      message: 'Ihre Nachricht..'
+  submitSuccessful: 'Vielen Dank! Ihre Anfrage ist bei mir eingegangen und ich werde mich schnellstmöglich zurück melden.'
