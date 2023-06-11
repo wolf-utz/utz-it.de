@@ -49,7 +49,7 @@ set('rsync', [
 ]);
 
 task('composer:install', function () {
-    runLocally('composer -q install --no-dev --no-scripts');
+    runLocally('composer -q install --no-scripts');
 });
 
 task('symfony:doctrine:migrations:migrate', function () {
