@@ -45,16 +45,16 @@ set('rsync', [
     'timeout' => 600,
 ]);
 
+task('composer:install', function () {
+    runLocally('composer -q install --no-dev --no-scripts');
+});
+
 task('symfony:doctrine:migrations:migrate', function () {
     run('cd {{release_path}} && {{php_path}} vendor/bin/console --no-interaction doctrine:migrations:migrate');
 });
 
 task('symfony:cache:clear', function () {
     run('cd {{release_path}} && {{php_path}} vendor/bin/console --no-interaction cache:clear');
-});
-
-task('composer:install', function () {
-    runLocally('composer -q install --no-dev');
 });
 
 task('deploy', [
