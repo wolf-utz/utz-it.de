@@ -14,7 +14,7 @@ host('prod')
     ->set('repository', 'https://github.com/wolf-utz/utz-it.de')
     ->set('php_path', '/usr/bin/php8.1');
 
-set('bin_folder', './vendor/bin/');
+set('bin_folder', './bin/');
 set('typo3_webroot', 'public');
 set('rsync_src', './');
 set('rsync', [
@@ -53,15 +53,15 @@ task('composer:install', function () {
 });
 
 task('symfony:doctrine:migrations:migrate', function () {
-    run('cd {{release_path}} && {{php_path}} vendor/bin/console --no-interaction doctrine:migrations:migrate');
+    run('cd {{release_path}} && {{php_path}} {{bin_folder}}/console --no-interaction doctrine:migrations:migrate');
 });
 
 task('symfony:cache:clear', function () {
-    run('cd {{release_path}} && {{php_path}} vendor/bin/console --no-interaction cache:clear');
+    run('cd {{release_path}} && {{php_path}} {{bin_folder}}/console --no-interaction cache:clear');
 });
 
 task('symfony:asset:install', function () {
-    run('cd {{release_path}} && {{php_path}} vendor/bin/console --no-interaction asset:install');
+    run('cd {{release_path}} && {{php_path}} {{bin_folder}}/console --no-interaction asset:install');
 });
 
 task('deploy', [
