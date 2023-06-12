@@ -24,7 +24,7 @@ set('rsync', [
         '.docker*',
         '.editorconfig',
         '.github',
-        '.env*',
+        '.env.*',
         '.git*',
         '.surf',
         '.deployer',
