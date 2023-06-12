@@ -341,6 +341,12 @@ fieldset[disabled] .btn-custom.active {
     padding: 1rem;
 }
 
+@media (max-width: 576px) {
+    .skill-icon {
+        max-width: 200px;
+    }
+}
+
 label.required:after {
     content: " *";
     color: red;
