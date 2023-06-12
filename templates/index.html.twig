@@ -259,43 +259,13 @@
             <!-- Contact Section Form-->
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-xl-7">
-{#                    <form id="contactForm" class="lead">#}
-{#                        <div class="row">#}
-{#                            <div class="col-12 col-lg-6 mb-3">#}
-{#                                <label for="email">E-Mail <span class="text-danger">*</span></label>#}
-{#                                <input class="form-control" id="email" type="email"#}
-{#                                       placeholder="name@example.de" required="required"/>#}
-{#                            </div>#}
-{#                            <div class="col-12 col-lg-6 mb-3">#}
-{#                                <label for="name">Name <span class="text-muted">(optional)</span></label>#}
-{#                                <input class="form-control" id="name" type="text"#}
-{#                                       placeholder="Max Muster"/>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="mb-3">#}
-{#                            <label for="message">Nachricht <span class="text-danger">*</span></label>#}
-{#                            <textarea class="form-control" id="message" type="text" required="required"#}
-{#                                      placeholder="Ihre Nachricht..." style="height: 10rem"></textarea>#}
-{#                        </div>#}
-{#                        <div class="form-check mb-3">#}
-{#                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">#}
-{#                            <label class="form-check-label" for="flexCheckDefault">#}
-{#                                Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und stimme ihr zu. <span class="text-danger">*</span>#}
-{#                            </label>#}
-{#                        </div>#}
-{#                        <button class="btn btn-custom btn-xl" id="submitButton" type="submit">Absenden</button>#}
-{#                    </form>#}
-
-{#                    <hr>#}
-
-                    <div id="contactForm"  class="lead">
+                    <div id="contactForm" class="lead">
                         {% for message in app.flashes('success') %}
                             <div class="alert alert-success">
                                 {{ message }}
                             </div>
                         {% endfor %}
-
-                        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                        {{ form_start(form) }}
                             <div class="row">
                                 <div class="col-12 col-lg-6 mb-3">
                                     {{ form_row(form.email) }}
@@ -306,8 +276,6 @@
                             </div>
                         {{ form_end(form) }}
                     </div>
-
-
                 </div>
             </div>
         </div>
