@@ -9,6 +9,7 @@ use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Attribute\Cache;
 use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -16,6 +17,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class FrontendController extends AbstractController
 {
     #[Route('/', name: 'fe_index')]
+    #[Cache(public: true, maxage: 3600, mustRevalidate: true)]
     public function index(
         Request $request,
         EntityManagerInterface $entityManager,
