@@ -1,130 +1,95 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="language" content="Deutsch">
-
-        <title>
-            {% block title %}Wolf-Peter Utz | IT Dienstleistungen | CMS - E-Commerce - App - Individual{% endblock %}
-        </title>
-        <meta name="description" content="IT-Freelancer mit Expertise in CMS, E-Commerce und Web-App. Zusammen können wir innovative Lösungen entwickeln und Ihr Projekt zum Erfolg führen.">
-        <meta name="keywords" content="CMS, E-Commerce, Software, Freelancer, Utz">
-        <meta name="robots" content="index, follow">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-
-        <meta name="author" content="Wolf-Peter Utz">
-        <meta name="copyright" content="Copyright Wolf-Peter Utz" />
-
-        {% block stylesheets %}
-            <!-- Google fonts-->
-            <link href="css/font-montserrat.css" rel="stylesheet" type="text/css" />
-            <link href="css/font-lato.css" rel="stylesheet" type="text/css" />
-
-            <!-- Core theme CSS (includes Bootstrap)-->
-            <link href="css/bootstrap.min.css" rel="stylesheet" />
-            <link href="css/styles.css" rel="stylesheet" />
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="Deutsch">
+    <title>
+        {% block title %}
+            {{ 'page.title'|trans }}
         {% endblock %}
-    </head>
-    <body id="page-top">
-        {% block navigation %}
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-                <div class="container">
-                    <a class="navbar-brand" href="#page-top">
-                        Home
+    </title>
+    <meta name="description" content="{{ 'page.description'|trans }}">
+    <meta name="keywords" content="{{ 'page.keywords'|trans }}">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#20834D">
+    <meta name="theme-color" content="#20834D">
+    <meta name="author" content="{{ 'page.author'|trans }}">
+    <meta name="copyright" content="{{ 'page.copyrightMeta'|trans }}"/>
+    {% block stylesheets %}
+        <link href="css/font-montserrat.css" rel="stylesheet" type="text/css"/>
+        <link href="css/font-lato.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/styles.css" rel="stylesheet"/>
+    {% endblock %}
+</head>
+<body id="start">
+{% block navigation %}
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block body %}{% endblock %}
+{% block footer %}
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">
+                        {{ 'page.location'|trans }}
+                    </h4>
+                    <p class="lead mb-0">
+                        {{ 'page.locationText'|trans|raw }}
+                    </p>
+                </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <ul class="footer-links">
+                        <li>
+                            <a class="footer-link" href="{{ path('fe_datenschutz') }}">
+                                {{ 'page.dataProtection'|trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="{{ path('fe_impressum') }}">
+                                {{ 'page.impressum'|trans }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">{{ 'page.aroundTheWeb'|trans }}</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://github.com/wolf-utz">
+                        <i class="fab fa-fw fa-github"></i>
                     </a>
-                    <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                        Menu
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Leistungen</a></li>
-                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skills">Skills</a></li>
-                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Über mich</a></li>
-                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Kontakt</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        {% endblock %}
-
-        {% block header %}
-            <!-- Masthead-->
-            <header class="masthead bg-primary text-white text-center">
-                <div class="container d-flex align-items-center flex-column">
-                    <!-- Masthead Avatar Image-->
-                    <img class="masthead-avatar mb-5 rounded" src="assets/img/me.JPG" alt="..." />
-{#                    <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />#}
-                    <!-- Masthead Heading-->
-                    <h1 class="masthead-heading text-uppercase mb-0">Wolf-Peter Utz</h1>
-                    <!-- Icon Divider-->
-                    <div class="divider-custom divider-light">
-                        <div class="divider-custom-line"></div>
-                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                        <div class="divider-custom-line"></div>
-                    </div>
-                    <!-- Masthead Subheading-->
-                    <p class="masthead-subheading font-weight-light mb-0">E-Commerce - CMS - App - Individual</p>
-                </div>
-            </header>
-        {% endblock %}
-
-        {% block body %}
-        {% endblock %}
-
-        {% block footer %}
-            <!-- Footer-->
-            <footer class="footer text-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 mb-5 mb-lg-0">
-                            <h4 class="text-uppercase mb-4">Standort</h4>
-                            <p class="lead mb-0">
-                                35685 Dillenburg<br />
-                                Fauleborn 25
-                            </p>
-                        </div>
-                        <div class="col-lg-4 mb-5 mb-lg-0">
-                            <img class="img img-fluid rounded mb-0 mb-md-5" width="128px" src="assets/img/wpu-logo-small.png" alt="Logo" />
-                            <ul class="footer-links">
-                                <li>
-                                    <a class="footer-link" href="/datenschutz">Datenschutz</a>
-                                </li>
-                                <li>
-                                    <a class="footer-link" href="/impressum">Impressum</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-4 mb-5 mb-lg-0">
-                            <h4 class="text-uppercase mb-4">Around the Web</h4>
-                            <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://github.com/wolf-utz"><i class="fab fa-fw fa-github"></i></a>
-                            <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.xing.com/profile/WolfPeter_Utz"><i class="fab fa-fw fa-xing"></i></a>
-                            <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.linkedin.com/in/wolf-peter-utz/"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="mailto:wolf@utz-it.de"><i class="fa-solid fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <div class="copyright py-4 text-center text-white">
-                <div class="container">
-                    <small>Copyright &copy; Wolf-Peter Utz 2023</small>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                       href="https://www.xing.com/profile/WolfPeter_Utz">
+                        <i class="fab fa-fw fa-xing"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                       href="https://www.linkedin.com/in/wolf-peter-utz/">
+                        <i class="fab fa-fw fa-linkedin-in"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="mailto:wolf@utz-it.de">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
                 </div>
             </div>
-        {% endblock %}
-
-        {% block javascripts_footer %}
-            <script src="js/bootstrap.bundle.min.js"></script>
-            <script src="js/font-awesome.js"></script>
-            <script src="js/scripts.js"></script>
-        {% endblock %}
-    </body>
+        </div>
+    </footer>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container">
+            <small>{{ 'page.copyright'|trans|raw }}</small>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts_footer %}
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/font-awesome.js"></script>
+    <script src="js/scripts.js"></script>
+{% endblock %}
+</body>
 </html>
