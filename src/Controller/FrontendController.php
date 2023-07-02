@@ -17,7 +17,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class FrontendController extends AbstractController
 {
     #[Route('/', name: 'fe_index')]
-    #[Cache(public: true, maxage: 3600, mustRevalidate: true)]
+    #[Cache(maxage: 3600, public: true, mustRevalidate: true)]
     public function index(
         Request $request,
         EntityManagerInterface $entityManager,
@@ -47,7 +47,7 @@ class FrontendController extends AbstractController
 
         return $this->render('index.html.twig', [
             'form' => $form,
-        ]);
+        ])->setMaxAge(3600)->setPublic();
     }
 
     #[Route('/impressum', name: 'fe_impressum')]
