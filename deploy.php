@@ -14,8 +14,6 @@ host('prod')
     ->set('repository', 'https://github.com/wolf-utz/utz-it.de')
     ->set('php_path', '/usr/bin/php8.1');
 
-set('shared_files', ['public/.htaccess']);
-
 set('bin_folder', './bin/');
 set('typo3_webroot', 'public');
 set('rsync_src', './');
