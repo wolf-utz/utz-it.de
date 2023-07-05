@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\Cache;
+use Symfony\Component\HttpKernel\EventListener\AbstractSessionListener;
 use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -123,9 +124,10 @@ class FrontendController extends AbstractController
             return $this->redirect($this->generateUrl('fe_index') . '#contact');
         }
 
-        return $this->render('index.html.twig', ['form' => $form, 'services' => $services, 'skills' => $skills])
-            ->setMaxAge(3600)
-            ->setPublic();
+        $response = $this->render('index.html.twig', ['form' => $form, 'services' => $services, 'skills' => $skills]);
+        $response->headers->set(AbstractSessionListener::NO_AUTO_CACHE_CONTROL_HEADER, 'true');
+
+        return $response;
     }
 
     #[Route('/impressum', name: 'fe_impressum')]
