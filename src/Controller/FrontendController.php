@@ -131,12 +131,14 @@ class FrontendController extends AbstractController
     }
 
     #[Route('/impressum', name: 'fe_impressum')]
+    #[Cache(maxage: 3600, public: true, mustRevalidate: true)]
     public function impressum(): Response
     {
         return $this->render('impressum.html.twig');
     }
 
     #[Route('/datenschutz', name: 'fe_datenschutz')]
+    #[Cache(maxage: 3600, public: true, mustRevalidate: true)]
     public function datenschutz(): Response
     {
         return $this->render('datenschutz.html.twig');
