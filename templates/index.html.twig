@@ -41,7 +41,8 @@
 {% block header %}
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
-            <img class="masthead-avatar mb-5 rounded" src="/assets/img/me.jpg" alt="{{ 'page.authorImgAlt'|trans }}"/>
+            <img class="masthead-avatar mb-5 rounded" src="/assets/img/me.jpg" width="250" height="250"
+                 alt="{{ 'page.authorImgAlt'|trans }}"/>
             <h1 class="masthead-heading text-uppercase mb-0">
                 {{ 'page.mastheadTitle'|trans }}
             </h1>
@@ -91,7 +92,7 @@
                                 </div>
                             </div>
                             <img class="img-fluid service-icon mx-auto" src="{{ service.image }}"
-                                 alt="Logo {{ service.name|trans }}"/>
+                                 width="200" height="200" alt="Logo {{ service.name|trans }}"/>
                         </div>
                     </div>
                 {% endfor %}
@@ -113,7 +114,7 @@
                     <div class="col-sm-6 col-md-4 col-lg-2 mb-5">
                         <div class="service-item d-flex">
                             <img class="img-fluid skill-icon mx-auto" src="{{ skill.image }}"
-                                 alt="Logo {{ skill.name|trans }}"/>
+                                 width="200" height="200" alt="Logo {{ skill.name|trans }}"/>
                         </div>
                     </div>
                 {% endfor %}
