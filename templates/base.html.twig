@@ -22,8 +22,8 @@
     <meta name="author" content="{{ 'page.author'|trans }}">
     <meta name="copyright" content="{{ 'page.copyrightMeta'|trans }}"/>
     {% block stylesheets %}
-        <link href="css/font-montserrat.css" rel="stylesheet" type="text/css"/>
-        <link href="css/font-lato.css" rel="stylesheet" type="text/css"/>
+        <link href="css/font-montserrat.css" type="text/css" rel="preload" as="font"/>
+        <link href="css/font-lato.css" type="text/css" rel="preload" as="font"/>
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
         <link href="css/styles.css" rel="stylesheet"/>
     {% endblock %}
