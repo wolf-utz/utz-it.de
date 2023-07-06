@@ -44,6 +44,12 @@ page:
     javascript: 'JavaScript'
     css: 'CSS'
     html: 'HTML'
+  footer:
+    links:
+      github: 'Link zu meinem GitHub-Profil.'
+      xing: 'Zum Xing-Profil von Wolf-Peter Utz.'
+      linkedin: 'Kontaktieren Sie mich via LinkedIn.'
+      email: 'Schreiben Sie mir eine E-Mail.'
 form:
   field:
     label:
