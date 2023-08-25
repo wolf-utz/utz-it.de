@@ -1,18 +1,21 @@
 name: Symfony Deploy (Manual)
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
-    inputs:
-      deploy_env:
-        description: 'Deploy Environment'
-        required: true
-        default: 'prod'
+
+#on:
+#  push:
+#    branches:
+#      - main
+#  pull_request:
+#    branches:
+#      - main
+#  workflow_dispatch:
+#    inputs:
+#      deploy_env:
+#        description: 'Deploy Environment'
+#        required: true
+#        default: 'prod'
 
 jobs:
   deploy:
