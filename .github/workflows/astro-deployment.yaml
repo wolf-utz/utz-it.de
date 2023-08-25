@@ -1,4 +1,4 @@
-name: Deploy (Manual)
+name: Astro Deploy (Manual)
 on:
   workflow_dispatch:
 

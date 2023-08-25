@@ -1,4 +1,4 @@
-name: Deploy (Manual)
+name: Symfony Deploy (Manual)
 
 on:
   push:
