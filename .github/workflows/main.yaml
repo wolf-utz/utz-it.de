@@ -1,23 +1,8 @@
 name: Deploy (Manual)
-
-#on:
-#  push:
-#    branches:
-#      - main
-#  pull_request:
-#    branches:
-#      - main
-#  workflow_dispatch:
-#    inputs:
-#      deploy_env:
-#        description: 'Deploy Environment'
-#        required: true
-#        default: 'prod'
 on:
   workflow_dispatch:
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -27,42 +12,16 @@ jobs:
         uses: withastro/action@v0
         with:
           path: astro/
-          # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
-          # package-manager: yarn # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-        # resolve-dep-from-path: false # If the dependency file should be resolved from the root location of your Astro project. Defaults to `true`. (optional)
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      uses: burnett01/rsync-deployments@6.0.0
-      with:
-        switches: -avzr --delete
-        path: astro/dist
-        remote_path: kunden/homepages/2/d964308919/htdocs/astro
-        remote_host: access964308919.webspace-data.io
-        remote_user: u112422749$
-        remote_key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
 
 #  deploy:
-#    name: Deployment
+#    needs: build
 #    runs-on: ubuntu-latest
-#
 #    steps:
-#      - uses: actions/checkout@v2
-#
-#      - name: Setup PHP
-#        uses: shivammathur/setup-php@v2
-#        with:
-#          php-version: 8.1
-#
-#      - name: Install Dependencies
-#        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-#
-#      - name: Deploy
-#        uses: deployphp/action@v1
-#        with:
-#          private-key: ${{ secrets.PRIVATE_KEY }}
-#          known-hosts: ${{ secrets.KNOWN_HOSTS }}
-#          dep: deploy ${{ github.event.inputs.deploy_env }} -v
-#          deployer-binary: vendor/bin/dep
+#      uses: burnett01/rsync-deployments@6.0.0
+#      with:
+#        switches: -avzr --delete
+#        path: astro/dist
+#        remote_path: kunden/homepages/2/d964308919/htdocs/astro
+#        remote_host: access964308919.webspace-data.io
+#        remote_user: u112422749$
+#        remote_key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
