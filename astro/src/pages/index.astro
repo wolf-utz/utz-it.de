@@ -1,0 +1,195 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {useTranslations} from '../i18n/utils';
+
+const t = useTranslations('de');
+const services = [
+    {
+        'name': 'page.services.shopware',
+        'image': '/assets/img/services/shopware.png',
+        'keywords': [
+            'page.services.keywords.e-commerce',
+            'page.services.keywords.cms'
+        ]
+    },
+    {
+        'name': 'page.services.typo3',
+        'image': '/assets/img/services/typo3.svg',
+        'keywords': [
+            'page.services.keywords.blog',
+            'page.services.keywords.cms'
+        ]
+    },
+    {
+        'name': 'page.services.wordpress',
+        'image': '/assets/img/services/wordpress.svg',
+        'keywords': [
+            'page.services.keywords.cms'
+        ]
+    },
+    {
+        'name': 'page.services.symfony',
+        'image': '/assets/img/services/symfony.svg',
+        'keywords': [
+            'page.services.keywords.webApp',
+            'page.services.keywords.api',
+            'page.services.keywords.cli',
+        ]
+    },
+    {
+        'name': 'page.services.spring',
+        'image': '/assets/img/services/spring.svg',
+        'keywords': [
+            'page.services.keywords.webApp',
+            'page.services.keywords.api',
+            'page.services.keywords.cli',
+        ]
+    },
+    {
+        'name': 'page.services.vue',
+        'image': '/assets/img/services/vuejs.svg',
+        'keywords': [
+            'page.services.keywords.webApp',
+        ]
+    }
+];
+const skills = [
+    {
+        'name': 'page.skills.php',
+        'image': '/assets/img/skills/php.svg',
+    },
+    {
+        'name': 'page.skills.java',
+        'image': '/assets/img/skills/java.svg',
+    },
+    {
+        'name': 'page.skills.csharp',
+        'image': '/assets/img/skills/csharp.svg',
+    }
+    , {
+        'name': 'page.skills.javascript',
+        'image': '/assets/img/skills/javascript.svg',
+    },
+    {
+        'name': 'page.skills.css',
+        'image': '/assets/img/skills/css.svg',
+    },
+    {
+        'name': 'page.skills.html',
+        'image': '/assets/img/skills/html.svg',
+    }
+];
+---
+<BaseLayout>
+    <section class="page-section service pb-1" id="services">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+                {t('page.nav.services')}
+            </h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="row justify-content-center">
+                {
+                    services.map(service => (
+                            <div class="col-sm-6 col-md-4 col-lg-4 mb-5">
+                                <div class="service-item mx-auto d-flex">
+                                    <div class="service-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="text-center text-white">
+                                            <p class="service-item-caption-title fs-2">
+                                                {t(service.name)}
+                                            </p>
+                                            <p class="service-item-caption-description">
+                                                {
+                                                    service.keywords.map(keyword => (
+                                                        <span class="badge bg-secondary">{t(keyword)}</span>
+                                                    ))
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <img class="img-fluid service-icon mx-auto" src={service.image}
+                                         width="200" height="200" alt={`Logo ${service.name}`}/>
+                                </div>
+                            </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+    <section class="page-section skills" id="skills">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+                {t('page.nav.skills')}
+            </h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="row justify-content-center">
+                {
+                    skills.map((skill) => (
+                            <div class="col-sm-6 col-md-4 col-lg-2 mb-5">
+                                <div class="service-item d-flex">
+                                    <img class="img-fluid skill-icon mx-auto" src={skill.image}
+                                         width="200" height="200" alt={`Logo ${skill.name}`}/>
+`                                </div>
+                            </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+    <section class="page-section bg-primary text-white mb-0" id="about">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-white">
+                {t('page.nav.about')}
+            </h2>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 ms-auto">
+                    <p class="lead">
+                        {t('page.aboutTextLeft')}
+                    </p>
+                </div>
+                <div class="col-lg-4 me-auto">
+                    <p class="lead">
+                        {t('page.aboutTextRight')}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section" id="contact">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+                {t('page.nav.contact')}
+            </h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <div id="contactForm" class="lead">
+                        ... form
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
