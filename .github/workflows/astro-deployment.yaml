@@ -22,7 +22,7 @@ jobs:
         with:
           switches: -avzr --delete
           path: astro/dist
-          remote_path: kunden/homepages/2/d964308919/htdocs/astro
+          remote_path: /kunden/homepages/2/d964308919/htdocs/astro
           remote_host: access964308919.webspace-data.io
           remote_user: u112422749
           remote_key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
