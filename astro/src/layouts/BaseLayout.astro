@@ -1,0 +1,150 @@
+---
+import "../styles/global.scss";
+import { useTranslations } from '../i18n/utils';
+
+const t = useTranslations('de');
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="Deutsch">
+    <title>
+        {t('page.title')}
+    </title>
+    <meta name="description" content="page.description">
+    <meta name="keywords" content="page.keywords">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#20834D">
+    <meta name="theme-color" content="#20834D">
+    <meta name="author" content="page.author">
+    <meta name="copyright" content="page.copyrightMeta"/>
+</head>
+<body id="start">
+
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#start">
+            {t('page.nav.start')}
+        </a>
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            {t('page.nav.menu')}
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#services">
+                        {t('page.nav.services')}
+                    </a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skills">
+                        {t('page.nav.skills')}
+                    </a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">
+                        {t('page.nav.about')}
+                    </a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">
+                        {t('page.nav.contact')}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <img class="masthead-avatar mb-5 rounded" src="/assets/img/me.jpg" width="250" height="250"
+             alt="page.authorImgAlt"/>
+        <h1 class="masthead-heading text-uppercase mb-0">
+            {t('page.mastheadTitle')}
+        </h1>
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <p class="masthead-subheading font-weight-light mb-0">
+            {t('page.mastheadSubtitle')}
+        </p>
+    </div>
+</header>
+
+<slot/>
+
+<footer class="footer text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h3 class="h4 text-uppercase mb-4" set:html={t('page.location')}></h3>
+                <p class="lead mb-0" set:html={t('page.locationText')}></p>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <ul class="footer-links">
+                    <li>
+                        <a class="footer-link" href="/datenschutz">
+                            {t('page.dataProtection')}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="/impressum">
+                            {t('page.impressum')}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h3 class="h4 text-uppercase mb-4">
+                    {t('page.aroundTheWeb')}
+                </h3>
+                <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                   aria-label="page.footer.links.github"
+                   href="https://github.com/wolf-utz">
+                    <i class="fab fa-fw fa-github"></i>
+                </a>
+                <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                   aria-label="page.footer.links.xing"
+                   href="https://www.xing.com/profile/WolfPeter_Utz">
+                    <i class="fab fa-fw fa-xing"></i>
+                </a>
+                <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                   aria-label="page.footer.links.linkedin"
+                   href="https://www.linkedin.com/in/wolf-peter-utz/">
+                    <i class="fab fa-fw fa-linkedin-in"></i>
+                </a>
+                <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                   aria-label="page.footer.links.email"
+                   href="mailto:wolf@utz-it.de">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright py-4 text-center text-white">
+    <div class="container">
+        <small set:html={t('page.copyright')}></small><br>
+        <small>Made with Astro</small>
+    </div>
+</div>
+<script is:inline src="/js/bootstrap.bundle.min.js"></script>
+<script is:inline src="/js/font-awesome.js"></script>
+<script is:inline src="/js/scripts.js"></script>
+</body>
+</html>
