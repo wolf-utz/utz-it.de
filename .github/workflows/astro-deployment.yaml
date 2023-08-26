@@ -26,6 +26,9 @@ jobs:
       - name: Adding Known Hosts
         run: ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
+      - name: show files
+        run: ls -la
+
       - name: Deploy using rsync
         run: rsync -avz -e "ssh -p 22" ./astro/dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/kunden/homepages/2/d964308919/htdocs/astro
 
