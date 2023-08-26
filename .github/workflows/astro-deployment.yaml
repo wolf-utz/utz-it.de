@@ -27,7 +27,7 @@ jobs:
         run: ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy using rsync
-        run: rsync -avz -e "ssh -p 22" ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/kunden/homepages/2/d964308919/htdocs/astro
+        run: rsync -avz -e "ssh -p 22" ./astro/dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/kunden/homepages/2/d964308919/htdocs/astro
 
 #        uses: burnett01/rsync-deployments@6.0.0
 #        with:
