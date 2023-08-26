@@ -9,9 +9,12 @@ on:
   workflow_dispatch:
     inputs:
       deploy_env:
+        type: choice
         description: 'Deploy Environment'
         required: true
         default: 'dev'
+        options:
+          - 'dev'
 
 jobs:
   build_and_deploy:
