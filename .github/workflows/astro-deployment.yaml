@@ -18,12 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy using rsync
-        uses: burnett01/rsync-deployments@6.0.0
-        with:
-          switches: -avzr --delete
-          path: astro/dist
-          remote_path: /kunden/homepages/2/d964308919/htdocs/astro
-          remote_host: access964308919.webspace-data.io
-          remote_user: u112422749
-          remote_key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        run: rsync -avz -e "ssh -p 22" ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/kunden/homepages/2/d964308919/htdocs/astro
+
+#        uses: burnett01/rsync-deployments@6.0.0
+#        with:
+#          switches: -avzr --delete
+#          path: astro/dist
+#          remote_path: /kunden/homepages/2/d964308919/htdocs/astro
+#          remote_host: access964308919.webspace-data.io
+#          remote_user: u112422749
+#          remote_key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
 
