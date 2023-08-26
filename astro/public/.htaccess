@@ -1,3 +1,9 @@
+#Protect Directory
+AuthName "DEV Login"
+AuthType Basic
+AuthUserFile /kunden/homepages/2/d964308919/htdocs/.htpasswd
+Require valid-user
+
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/plain
 AddOutputFilterByType DEFLATE text/html
