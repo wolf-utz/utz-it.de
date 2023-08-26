@@ -3,30 +3,39 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v3
+#
+#      - name: Install and build
+#        uses: withastro/action@v0
+#        with:
+#          path: astro/
+
+  build_and_deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install and build
+
+      - name: Install and build astro
         uses: withastro/action@v0
         with:
           path: astro/
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
           known_hosts: unnecessary
 
-      - name: Adding Known Hosts
+      - name: Add Known Hosts
         run: ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: show files
+      - name: show files [DEBUG]
         run: ls -la
 
       - name: Deploy using rsync
