@@ -1,0 +1,38 @@
+name: Astro Deploy (Manual)
+on:
+#  push:
+#    branches:
+#      - main
+#  pull_request:
+#    branches:
+#      - main
+  workflow_dispatch:
+    inputs:
+      deploy_env:
+        description: 'Deploy Environment'
+        required: true
+        default: 'dev'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install and build astro
+        uses: withastro/action@v0
+        with:
+          path: astro/
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          known_hosts: unnecessary
+
+      - name: Add Known Hosts
+        run: ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy using rsync
+        run: rsync -avz -e "ssh -p 22" ./astro/dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/kunden/homepages/2/d964308919/htdocs/${{ github.event.inputs.deploy_env }}

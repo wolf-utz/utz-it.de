@@ -1,5 +1,0 @@
-validation:
-  error:
-    not_blank: 'Der Wert darf nicht leer sein.'
-    invalidEmail: 'Die Eingabe muss dem format einer E-Mail-Address entsprechen.'
-    not_true: 'Dieses Feld muss ausgefüllt werden.'
