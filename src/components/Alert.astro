@@ -1,0 +1,20 @@
+---
+const {type, message, classList, id} = Astro.props;
+
+const iconClass = (type === 'danger' ? 'fa-triangle-exclamation' : 'fa-check')
+---
+<style>
+    .alert {
+        display: flex;
+        flex-direction: row;
+    }
+    .alert .icon{
+        margin-right: 1rem;
+        line-height: 2rem;;
+    }
+</style>
+
+<div id={id} class:list={['alert', 'alert-' + type, ...classList]}>
+    <i class:list={['icon' ,'fa-solid', iconClass]}></i>
+    <div set:html={message}></div>
+</div>

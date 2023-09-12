@@ -45,12 +45,14 @@
   "page.footer.links.linkedin": "Kontaktieren Sie mich via LinkedIn.",
   "page.footer.links.email": "Schreiben Sie mir eine E-Mail.",
   "form.field.label.email": "E-Mail",
-  "form.field.label.name": "Name <span class=\"text-muted\">(optional)</span>",
+  "form.field.label.name": "Name",
   "form.field.label.message": "Nachricht",
   "form.field.label.acceptDataPrivacy": "Ich habe die <a href=\"/datenschutz\">Datenschutzerkl&auml;rung</a> gelesen und stimme ihr zu.",
   "form.field.label.submit": "Absenden",
   "form.field.placeholder.email": "name@example.de",
   "form.field.placeholder.name": "Max Muster",
   "form.field.placeholder.message": "Ihre Nachricht..",
-  "form.submitSuccessful": "Vielen Dank! Ihre Anfrage ist bei mir eingegangen und ich werde mich schnellstmöglich zurückmelden."
+  "form.field.optional": "optional",
+  "form.submitSuccessful": "Vielen Dank! Ihre Anfrage ist bei mir eingegangen und ich werde mich schnellstmöglich zurückmelden.",
+  "form.submitFailure": "Ihre Anfrage konnte bedauerlicherweise nicht erfolgreich übertragen werden. Bitte versuchen Sie es erneut, oder kontaktieren sie mich per E-Mail unter: <a href='mailto:wolf@utz-it.de'>wolf@utz-it.de</a>."
 }
