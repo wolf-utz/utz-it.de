@@ -1,11 +1,5 @@
 name: Astro Deploy (Manual)
 on:
-#  push:
-#    branches:
-#      - main
-#  pull_request:
-#    branches:
-#      - main
   workflow_dispatch:
     inputs:
       deploy_env:
@@ -15,6 +9,7 @@ on:
         default: 'dev'
         options:
           - 'dev'
+          - 'prod'
 
 jobs:
   build_and_deploy:
@@ -36,4 +31,4 @@ jobs:
         run: ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy using rsync
-        run: rsync -avz -e "ssh -p 22" ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/kunden/homepages/2/d964308919/htdocs/${{ github.event.inputs.deploy_env }}
+        run: rsync -avz -e "ssh -p 22" ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/kunden/homepages/2/d964308919/htdocs/web/${{ github.event.inputs.deploy_env }}
