@@ -1,11 +1,9 @@
 ---
 import "../styles/global.scss";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
 
 import Footer from "../components/Footer.astro";
 import Copyright from "../components/Copyright.astro";
-import { useTranslations } from '../i18n/utils';
+import {useTranslations} from '../i18n/utils';
 
 const t = useTranslations('de');
 ---
@@ -41,4 +39,5 @@ const t = useTranslations('de');
 <Copyright/>
 
 </body>
+<script src="../lib/register-sw.ts"/>
 </html>
