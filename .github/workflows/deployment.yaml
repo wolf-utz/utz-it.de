@@ -11,6 +11,9 @@ on:
           - 'dev'
           - 'prod'
 
+env:
+  PUBLIC_CONTACT_API_URL: 'https://api.utz-it.de/api/v1/contact'
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
