@@ -390,3 +390,8 @@ label[for="inquiry_captcha"] {
   grid-column-start: 1;
   grid-column-end: 3;
 }
+
+label[for="specialRequest"], #specialRequest {
+  display: none;
+  visibility: hidden;
+}

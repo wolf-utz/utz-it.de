@@ -10,7 +10,7 @@ const t = useTranslations('de');
     <LoadingIndication/>
     <Alert type="success" message={t('form.submitSuccessful')} classList={["d-none"]} id="submit-success-alert"/>
     <Alert type="danger" message={t('form.submitFailure')} classList={["d-none"]} id="submit-error-alert"/>
-    <form id="inquiryForm" method="post" novalidate>
+    <form action="#" id="inquiryForm" method="post" novalidate>
         <div class="row">
             <div class="col-12 col-md-6 mb-3">
                 <div class="mb-3">
@@ -47,7 +47,10 @@ const t = useTranslations('de');
                        set:html={t('form.field.label.acceptDataPrivacy')}/>
             </div>
         </div>
-        <input type="hidden" id="inquiry_sendCopyToReceiver" name="sendCopyToReceiver">
+        <label for="specialRequest" class="form-label required">
+            Your special request
+        </label>
+        <input type="text" id="specialRequest" name="specialRequest">
         <div class="mb-3">
             <button type="submit" id="inquiry_submit" name="submit" class="btn-custom btn-xl btn">
                 {t('form.field.label.submit')}

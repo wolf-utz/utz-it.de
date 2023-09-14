@@ -10,15 +10,17 @@ import type {ContactFormApiResponse} from "../types";
     const successAlert: HTMLElement = document.getElementById('submit-success-alert');
     const errorAlert: HTMLElement = document.getElementById('submit-error-alert');
     const loadingIndication: HTMLElement = document.getElementById('loadingIndication');
+    const specialRequest: HTMLFormElement = <HTMLFormElement>document.getElementById('specialRequest');
     const url: string = import.meta.env.PUBLIC_CONTACT_API_URL
 
     function obSubmit(event: SubmitEvent): void {
         event.preventDefault()
         event.stopPropagation()
+
         hideAlerts()
         form?.classList.add('was-validated')
 
-        if (form?.checkValidity()) {
+        if (form?.checkValidity() && !specialRequest.value) {
             const contact: Contact = Contact.fromFromData(new FormData(<HTMLFormElement>form));
             // Disable all form elements.
             Array.from(form?.elements || []).forEach(formElement => formElement.disabled = true);
