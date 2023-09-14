@@ -1,12 +1,13 @@
 ---
 import {useTranslations} from '../i18n/utils';
-import {ContactFormApiResponse} from '../types';
 import Alert from "./Alert.astro";
+import LoadingIndication from "./LoadingIndication.astro";
 
 const t = useTranslations('de');
 ---
 
 <div id="contactForm" class="lead">
+    <LoadingIndication/>
     <Alert type="success" message={t('form.submitSuccessful')} classList={["d-none"]} id="submit-success-alert"/>
     <Alert type="danger" message={t('form.submitFailure')} classList={["d-none"]} id="submit-error-alert"/>
     <form id="inquiryForm" method="post" novalidate>
@@ -55,66 +56,4 @@ const t = useTranslations('de');
     </form>
 </div>
 
-<script>
-    import Contact from '../struct/Contact.ts'
-
-    (() => {
-        const form: HTMLFormElement | null = document.getElementById('inquiryForm');
-        if (form === null) {
-            console.error("Missing contact form element.")
-            return;
-        }
-
-        const url: string = import.meta.env.PUBLIC_CONTACT_API_URL
-
-        function obSubmit(event: SubmitEvent) {
-            event.preventDefault()
-            event.stopPropagation()
-            form.classList.add('was-validated')
-
-            if (form.checkValidity()) {
-                const contact: Contact = Contact.fromFromData(new FormData(event.target));
-                fetch(url, {
-                    method: 'POST',
-                    body: contact.toJson(),
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                })
-                    .then((response: Response) => response.json())
-                    .then((data: ContactFormApiResponse) => {
-                        if (data?.success) {
-                            form.classList.remove('was-validated');
-                            form.reset();
-                            showSuccessAlert()
-                            return;
-                        }
-                        showErrorAlert()
-                        throw new Error("Contact request failed.")
-                    })
-                    .catch(error => {
-                        showErrorAlert()
-                        console.error(error);
-                    })
-            }
-        }
-
-        function showErrorAlert() {
-            const successAlert = document.getElementById('submit-success-alert');
-            const errorAlert = document.getElementById('submit-error-alert');
-
-            errorAlert.classList.remove('d-none')
-            successAlert.classList.add('d-none')
-        }
-
-        function showSuccessAlert() {
-            const successAlert = document.getElementById('submit-success-alert');
-            const errorAlert = document.getElementById('submit-error-alert');
-
-            successAlert.classList.remove('d-none')
-            errorAlert.classList.add('d-none')
-        }
-
-        form?.addEventListener('submit', obSubmit)
-    })();
-</script>
+<script src="../lib/contact-form.ts"/>
