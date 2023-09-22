@@ -104,7 +104,7 @@ const skills = [
                                             <p class="service-item-caption-title fs-2">
                                                 {t(service.name)}
                                             </p>
-                                            <p class="service-item-caption-description">
+                                            <p class="service-item-caption-description d-flex gap-1">
                                                 {
                                                     service.keywords.map(keyword => (
                                                             <span class="badge bg-secondary">{t(keyword)}</span>
@@ -139,7 +139,6 @@ const skills = [
                                 <div class="service-item d-flex">
                                     <img class="img-fluid skill-icon mx-auto" src={skill.image}
                                          width="200" height="200" alt={`Logo ${skill.name}`}/>
-                                    `
                                 </div>
                             </div>
                     ))
