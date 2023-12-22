@@ -1,5 +1,7 @@
 # Website of IT-Freelancer Wolf-Peter Utz made with astro
 
+This is a simple astro.js project for my own website [utz-it.de](https://utz-it.de/)
+
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
