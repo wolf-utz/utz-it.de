@@ -47,7 +47,7 @@
   "form.field.label.email": "E-Mail",
   "form.field.label.name": "Name",
   "form.field.label.message": "Nachricht",
-  "form.field.label.acceptDataPrivacy": "Ich habe die <a href=\"/datenschutz\">Datenschutzerkl&auml;rung</a> gelesen und stimme ihr zu.",
+  "form.field.label.acceptDataPrivacy": "Ich habe die <a href=\"/datenschutz/\">Datenschutzerkl&auml;rung</a> gelesen und stimme ihr zu.",
   "form.field.label.submit": "Absenden",
   "form.field.placeholder.email": "name@example.de",
   "form.field.placeholder.name": "Max Muster",
