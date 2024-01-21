@@ -2,8 +2,8 @@
 const { type, message, classList, id } = Astro.props;
 
 const iconClasses: { [key: string]: string } = {
-  danger: "fa-triangle-exclamation",
-  check: "fa-check",
+  danger: 'fa-triangle-exclamation',
+  check: 'fa-check',
 };
 const iconClass = iconClasses[type];
 ---
@@ -19,7 +19,7 @@ const iconClass = iconClasses[type];
   }
 </style>
 
-<div id={id} class:list={`alert alert-${type} ${classList.join(" ")}`}>
+<div id={id} class:list={`alert alert-${type} ${classList.join(' ')}`}>
   <i class:list={`icon fa-solid ${iconClass}`}></i>
   <div set:html={message} />
 </div>

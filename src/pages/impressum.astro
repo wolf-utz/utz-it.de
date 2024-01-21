@@ -1,21 +1,22 @@
 ---
-import SubLayout from "../layouts/SubLayout.astro";
+import SubLayout from '../layouts/SubLayout.astro';
 import { useTranslations } from '../i18n/utils';
 
 const t = useTranslations('de');
 ---
-<SubLayout>
-    <header class="masthead bg-primary text-white text-center">
-        <h1>{t( 'page.impressum')}</h1>
-    </header>
 
-    <div class="container mt-5 mb-5">
-        <p><strong>Die Vorgaben von § 5 TMG sind durch die folgenden Angaben erfüllt:</strong></p>
-        <p>Wolf-Peter Utz<br>Fauleborn 25<br>35685 Dillenburg</p>
-        <h2>Kontakt</h2>
-        <p>
-            <b>E-Mail:</b> wolf@utz-it.de<br>
-            <b>Telefon:</b>  + 49 (0) 160 967 628 39
-        </p>
-    </div>
+<SubLayout>
+  <header class="masthead bg-primary text-white text-center">
+    <h1>{t('page.impressum')}</h1>
+  </header>
+
+  <div class="container mt-5 mb-5">
+    <p><strong>Die Vorgaben von § 5 TMG sind durch die folgenden Angaben erfüllt:</strong></p>
+    <p>Wolf-Peter Utz<br />Fauleborn 25<br />35685 Dillenburg</p>
+    <h2>Kontakt</h2>
+    <p>
+      <b>E-Mail:</b> wolf@utz-it.de<br />
+      <b>Telefon:</b> + 49 (0) 160 967 628 39
+    </p>
+  </div>
 </SubLayout>

@@ -1,62 +1,85 @@
 ---
-import {useTranslations} from '../i18n/utils';
-import Alert from "./Alert.astro";
-import LoadingIndication from "./LoadingIndication.astro";
+import { useTranslations } from '../i18n/utils';
+import Alert from './Alert.astro';
+import LoadingIndication from './LoadingIndication.astro';
 
 const t = useTranslations('de');
 ---
 
 <div id="contactForm" class="lead">
-    <LoadingIndication/>
-    <Alert type="success" message={t('form.submitSuccessful')} classList={["d-none"]} id="submit-success-alert"/>
-    <Alert type="danger" message={t('form.submitFailure')} classList={["d-none"]} id="submit-error-alert"/>
-    <form action="#" id="inquiryForm" method="post" novalidate>
-        <div class="row">
-            <div class="col-12 col-md-6 mb-3">
-                <div class="mb-3">
-                    <label for="inquiry_email" class="form-label required">
-                        {t('form.field.label.email')}
-                    </label>
-                    <input type="email" id="inquiry_email" name="email" required="required"
-                           placeholder={t('form.field.placeholder.email')} class="form-control">
-                </div>
-            </div>
-            <div class="col-12 col-md-6 mb-3">
-                <div class="mb-3">
-                    <label for="inquiry_name" class="form-label">
-                        {t('form.field.label.name')} <small class="text-muted">({t('form.field.optional')})</small>
-                    </label>
-                    <input type="text" id="inquiry_name" name="name" class="form-control"
-                           placeholder={t('form.field.placeholder.name')}>
-                </div>
-            </div>
-        </div>
+  <LoadingIndication />
+  <Alert type="success" message={t('form.submitSuccessful')} classList={['d-none']} id="submit-success-alert" />
+  <Alert type="danger" message={t('form.submitFailure')} classList={['d-none']} id="submit-error-alert" />
+  <form action="#" id="inquiryForm" method="post" novalidate>
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
         <div class="mb-3">
-            <label for="inquiry_message" class="form-label required">
-                {t('form.field.label.message')}
-            </label>
-            <textarea id="inquiry_message" name="message" required="required" style="min-height: 10rem"
-                      placeholder={t('form.field.placeholder.message')} class="form-control"/>
+          <label for="inquiry_email" class="form-label required">
+            {t('form.field.label.email')}
+          </label>
+          <input
+            type="email"
+            id="inquiry_email"
+            name="email"
+            required="required"
+            placeholder={t('form.field.placeholder.email')}
+            class="form-control"
+          />
         </div>
+      </div>
+      <div class="col-12 col-md-6 mb-3">
         <div class="mb-3">
-            <div class="form-check">
-                <input type="checkbox" id="inquiry_acceptDataPrivacy"
-                       name="inquiry[acceptDataPrivacy]" required="required"
-                       class="form-check-input" value="1">
-                <label class="form-check-label required" for="inquiry_acceptDataPrivacy"
-                       set:html={t('form.field.label.acceptDataPrivacy')}/>
-            </div>
+          <label for="inquiry_name" class="form-label">
+            {t('form.field.label.name')}
+            <small class="text-muted">({t('form.field.optional')})</small>
+          </label>
+          <input
+            type="text"
+            id="inquiry_name"
+            name="name"
+            class="form-control"
+            placeholder={t('form.field.placeholder.name')}
+          />
         </div>
-        <label for="specialRequest" class="form-label required">
-            Your special request
-        </label>
-        <input type="text" id="specialRequest" name="specialRequest">
-        <div class="mb-3">
-            <button type="submit" id="inquiry_submit" name="submit" class="btn-custom btn-xl btn">
-                {t('form.field.label.submit')}
-            </button>
-        </div>
-    </form>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="inquiry_message" class="form-label required">
+        {t('form.field.label.message')}
+      </label>
+      <textarea
+        id="inquiry_message"
+        name="message"
+        required="required"
+        style="min-height: 10rem"
+        placeholder={t('form.field.placeholder.message')}
+        class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+      <div class="form-check">
+        <input
+          type="checkbox"
+          id="inquiry_acceptDataPrivacy"
+          name="inquiry[acceptDataPrivacy]"
+          required="required"
+          class="form-check-input"
+          value="1"
+        />
+        <label
+          class="form-check-label required"
+          for="inquiry_acceptDataPrivacy"
+          set:html={t('form.field.label.acceptDataPrivacy')}
+        />
+      </div>
+    </div>
+    <label for="specialRequest" class="form-label required"> Your special request </label>
+    <input type="text" id="specialRequest" name="specialRequest" />
+    <div class="mb-3">
+      <button type="submit" id="inquiry_submit" name="submit" class="btn-custom btn-xl btn">
+        {t('form.field.label.submit')}
+      </button>
+    </div>
+  </form>
 </div>
 
-<script src="../lib/contact-form.ts"/>
+<script src="../lib/contact-form.ts"></script>

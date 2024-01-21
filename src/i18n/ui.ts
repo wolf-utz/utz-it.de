@@ -1,10 +1,10 @@
-import deJson from './de_DE.json'
+import deJson from './de_DE.json';
 
 export const languages = {
-    de: 'Deutsch',
+  de: 'Deutsch',
 };
 
 export const defaultLang = 'de';
 export const ui = {
-    de: deJson,
+  de: deJson,
 } as const;

@@ -1,43 +1,42 @@
 ---
-import "../styles/global.scss";
+import '../styles/global.scss';
 
-import Footer from "../components/Footer.astro";
-import Copyright from "../components/Copyright.astro";
-import {useTranslations} from '../i18n/utils';
+import Footer from '../components/Footer.astro';
+import Copyright from '../components/Copyright.astro';
+import { useTranslations } from '../i18n/utils';
 
 const t = useTranslations('de');
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="Deutsch">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="Deutsch" />
     <title>
-        {t('page.title')}
+      {t('page.title')}
     </title>
-    <meta name="description" content="page.description">
-    <meta name="keywords" content="page.keywords">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="application-name" content="Utz-IT">
-    <meta name="apple-mobile-web-app-title" content="Utz-IT">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#20834D">
-    <meta name="theme-color" content="#20834D">
-    <meta name="author" content="page.author">
-    <meta name="copyright" content="page.copyrightMeta"/>
-</head>
-<body id="start">
+    <meta name="description" content="page.description" />
+    <meta name="keywords" content="page.keywords" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="application-name" content="Utz-IT" />
+    <meta name="apple-mobile-web-app-title" content="Utz-IT" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#20834D" />
+    <meta name="theme-color" content="#20834D" />
+    <meta name="author" content="page.author" />
+    <meta name="copyright" content="page.copyrightMeta" />
+  </head>
+  <body id="start">
+    <slot />
 
-<slot/>
-
-<Footer/>
-<Copyright/>
-
-</body>
-<script src="../lib/register-sw.ts"/>
+    <Footer />
+    <Copyright />
+  </body>
+  <script src="../lib/register-sw.ts"></script>
 </html>

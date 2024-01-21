@@ -1,5 +1,5 @@
 export interface ContactFormApiResponse {
-    success: Boolean,
-    error: string|undefined
-    data: any
+  success: Boolean;
+  error: string | undefined;
+  data: any;
 }

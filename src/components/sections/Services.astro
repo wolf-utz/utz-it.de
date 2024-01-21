@@ -1,17 +1,15 @@
 ---
-import { useTranslations } from "../../i18n/utils";
-import DividerWithIcon from "../misc/DividerWithIcon.astro";
-import services from "../../data/services.json";
+import { useTranslations } from '../../i18n/utils';
+import DividerWithIcon from '../misc/DividerWithIcon.astro';
+import services from '../../data/services.json';
 
-const t = useTranslations("de");
+const t = useTranslations('de');
 ---
 
 <section class="page-section service pb-1" id="services">
   <div class="container">
-    <h2
-      class="page-section-heading text-center text-uppercase text-secondary mb-0"
-    >
-      {t("page.nav.services")}
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+      {t('page.nav.services')}
     </h2>
     <DividerWithIcon iconClass="fa-cogs" lightMode={false} />
 
@@ -22,9 +20,7 @@ const t = useTranslations("de");
             <div class="service-item mx-auto d-flex">
               <div class="service-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="text-center text-white">
-                  <p class="service-item-caption-title fs-2">
-                    {t(service.name)}
-                  </p>
+                  <p class="service-item-caption-title fs-2">{t(service.name)}</p>
                   <p class="service-item-caption-description d-flex gap-1">
                     {service.keywords.map((keyword) => (
                       <span class="badge bg-secondary">{t(keyword)}</span>
