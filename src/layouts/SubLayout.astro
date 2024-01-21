@@ -1,13 +1,14 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
-import SmallNavigation from "./../components/SmallNavigation.astro";
-import {useTranslations} from '../i18n/utils';
+import BaseLayout from './BaseLayout.astro';
+import SmallNavigation from './../components/SmallNavigation.astro';
+import { useTranslations } from '../i18n/utils';
 
 const t = useTranslations('de');
 ---
+
 <BaseLayout>
-    <SmallNavigation/>
-    <main>
-        <slot/>
-    </main>
+  <SmallNavigation />
+  <main>
+    <slot />
+  </main>
 </BaseLayout>

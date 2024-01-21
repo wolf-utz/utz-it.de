@@ -1,12 +1,13 @@
 ---
-import "../styles/global.scss";
+import '../styles/global.scss';
 import { useTranslations } from '../i18n/utils';
 
 const t = useTranslations('de');
 ---
+
 <div class="copyright py-4 text-center text-white">
-    <div class="container">
-        <small set:html={t('page.copyright')}></small><br>
-        <small>Made with <a href="https://astro.build/">Astro</a></small>
-    </div>
+  <div class="container">
+    <small set:html={t('page.copyright')} /><br />
+    <small>Made with <a href="https://astro.build/">Astro</a></small>
+  </div>
 </div>

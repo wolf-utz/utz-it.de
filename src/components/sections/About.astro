@@ -1,25 +1,25 @@
 ---
-import { useTranslations } from "../../i18n/utils";
-import DividerWithIcon from "../misc/DividerWithIcon.astro";
+import { useTranslations } from '../../i18n/utils';
+import DividerWithIcon from '../misc/DividerWithIcon.astro';
 
-const t = useTranslations("de");
+const t = useTranslations('de');
 ---
 
 <section class="page-section bg-primary text-white mb-0" id="about">
   <div class="container">
     <h2 class="page-section-heading text-center text-uppercase text-white">
-      {t("page.nav.about")}
+      {t('page.nav.about')}
     </h2>
     <DividerWithIcon iconClass="fa-user" lightMode={true} />
     <div class="row">
       <div class="col-lg-4 ms-auto">
         <p class="lead">
-          {t("page.aboutTextLeft")}
+          {t('page.aboutTextLeft')}
         </p>
       </div>
       <div class="col-lg-4 me-auto">
         <p class="lead">
-          {t("page.aboutTextRight")}
+          {t('page.aboutTextRight')}
         </p>
       </div>
     </div>

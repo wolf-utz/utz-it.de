@@ -1,8 +1,8 @@
 ---
-import { useTranslations } from "../../i18n/utils";
-import DividerWithIcon from "../misc/DividerWithIcon.astro";
+import { useTranslations } from '../../i18n/utils';
+import DividerWithIcon from '../misc/DividerWithIcon.astro';
 
-const t = useTranslations("de");
+const t = useTranslations('de');
 ---
 
 <header class="masthead bg-primary text-white text-center">
@@ -12,14 +12,14 @@ const t = useTranslations("de");
       src="/img/me.webp"
       width="250"
       height="250"
-      alt={t("page.authorImgAlt")}
+      alt={t('page.authorImgAlt')}
     />
     <h1 class="masthead-heading text-uppercase mb-0">
-      {t("page.mastheadTitle")}
+      {t('page.mastheadTitle')}
     </h1>
     <DividerWithIcon iconClass="fa-star" lightMode={true} />
     <p class="masthead-subheading font-weight-light mb-0">
-      {t("page.mastheadSubtitle")}
+      {t('page.mastheadSubtitle')}
     </p>
   </div>
 </header>
