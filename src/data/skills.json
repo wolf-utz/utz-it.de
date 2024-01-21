@@ -1,0 +1,26 @@
+[
+  {
+    "name": "page.skills.php",
+    "image": "/img/skills/php.svg"
+  },
+  {
+    "name": "page.skills.java",
+    "image": "/img/skills/java.svg"
+  },
+  {
+    "name": "page.skills.csharp",
+    "image": "/img/skills/csharp.svg"
+  },
+  {
+    "name": "page.skills.javascript",
+    "image": "/img/skills/javascript.svg"
+  },
+  {
+    "name": "page.skills.css",
+    "image": "/img/skills/css.svg"
+  },
+  {
+    "name": "page.skills.html",
+    "image": "/img/skills/html.svg"
+  }
+]

@@ -1,0 +1,37 @@
+---
+import { useTranslations } from "../../i18n/utils";
+import skills from "../../data/skills.json";
+const t = useTranslations("de");
+---
+
+<section class="page-section skills" id="skills">
+  <div class="container">
+    <h2
+      class="page-section-heading text-center text-uppercase text-secondary mb-0"
+    >
+      {t("page.nav.skills")}
+    </h2>
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <div class="row justify-content-center">
+      {
+        skills.map((skill) => (
+          <div class="col-sm-6 col-md-4 col-lg-2 mb-5">
+            <div class="service-item d-flex">
+              <img
+                class="img-fluid skill-icon mx-auto"
+                src={skill.image}
+                width="200"
+                height="200"
+                alt={`Logo ${skill.name}`}
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

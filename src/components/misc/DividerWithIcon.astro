@@ -1,0 +1,11 @@
+---
+const { iconClass, lightMode } = Astro.props;
+---
+
+<div class:list={'divider-custom' + (lightMode ? ' divider-light' : '')}">
+  <div class="divider-custom-line"></div>
+  <div class="divider-custom-icon">
+    <i class:list={`fas ${iconClass}`}></i>
+  </div>
+  <div class="divider-custom-line"></div>
+</div>

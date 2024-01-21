@@ -1,20 +1,25 @@
 ---
-const {type, message, classList, id} = Astro.props;
+const { type, message, classList, id } = Astro.props;
 
-const iconClass = (type === 'danger' ? 'fa-triangle-exclamation' : 'fa-check')
+const iconClasses: { [key: string]: string } = {
+  danger: "fa-triangle-exclamation",
+  check: "fa-check",
+};
+const iconClass = iconClasses[type];
 ---
+
 <style>
-    .alert {
-        display: flex;
-        flex-direction: row;
-    }
-    .alert .icon{
-        margin-right: 1rem;
-        line-height: 2rem;;
-    }
+  .alert {
+    display: flex;
+    flex-direction: row;
+  }
+  .alert .icon {
+    margin-right: 1rem;
+    line-height: 2rem;
+  }
 </style>
 
-<div id={id} class:list={['alert', 'alert-' + type, ...classList]}>
-    <i class:list={['icon' ,'fa-solid', iconClass]}></i>
-    <div set:html={message}></div>
+<div id={id} class:list={`alert alert-${type} ${classList.join(" ")}`}>
+  <i class:list={`icon fa-solid ${iconClass}`}></i>
+  <div set:html={message} />
 </div>
