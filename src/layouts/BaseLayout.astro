@@ -17,8 +17,8 @@ const t = useTranslations('de');
     <title>
       {t('page.title')}
     </title>
-    <meta name="description" content="page.description" />
-    <meta name="keywords" content="page.keywords" />
+    <meta name="description" content={t('page.description')} />
+    <meta name="keywords" content={t('page.keywords')} />
     <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="application-name" content="Utz-IT" />
@@ -29,8 +29,8 @@ const t = useTranslations('de');
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#20834D" />
     <meta name="theme-color" content="#20834D" />
-    <meta name="author" content="page.author" />
-    <meta name="copyright" content="page.copyrightMeta" />
+    <meta name="author" content={t('page.author')} />
+    <meta name="copyright" content={t('page.copyrightMeta')} />
   </head>
   <body id="start">
     <slot />
