@@ -1,3 +1,3 @@
 export default {
-  portfolio: true,
+  portfolio: false,
 };
