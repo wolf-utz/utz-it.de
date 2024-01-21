@@ -1,0 +1,43 @@
+[
+  {
+    "name": "page.services.shopware",
+    "image": "/img/services/shopware.webp",
+    "keywords": [
+      "page.services.keywords.e-commerce",
+      "page.services.keywords.cms"
+    ]
+  },
+  {
+    "name": "page.services.typo3",
+    "image": "/img/services/typo3.svg",
+    "keywords": ["page.services.keywords.blog", "page.services.keywords.cms"]
+  },
+  {
+    "name": "page.services.wordpress",
+    "image": "/img/services/wordpress.svg",
+    "keywords": ["page.services.keywords.cms"]
+  },
+  {
+    "name": "page.services.symfony",
+    "image": "/img/services/symfony.svg",
+    "keywords": [
+      "page.services.keywords.webApp",
+      "page.services.keywords.api",
+      "page.services.keywords.cli"
+    ]
+  },
+  {
+    "name": "page.services.spring",
+    "image": "/img/services/spring.svg",
+    "keywords": [
+      "page.services.keywords.webApp",
+      "page.services.keywords.api",
+      "page.services.keywords.cli"
+    ]
+  },
+  {
+    "name": "page.services.vue",
+    "image": "/img/services/vuejs.svg",
+    "keywords": ["page.services.keywords.webApp"]
+  }
+]

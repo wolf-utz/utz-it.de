@@ -1,0 +1,23 @@
+---
+import ContactForm from "../../components/ContactForm.astro";
+import { useTranslations } from "../../i18n/utils";
+import DividerWithIcon from "../misc/DividerWithIcon.astro";
+
+const t = useTranslations("de");
+---
+
+<section class="page-section" id="contact">
+  <div class="container">
+    <h2
+      class="page-section-heading text-center text-uppercase text-secondary mb-0"
+    >
+      {t("page.nav.contact")}
+    </h2>
+    <DividerWithIcon iconClass="fa-envelope" lightMode={false} />
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-7">
+        <ContactForm />
+      </div>
+    </div>
+  </div>
+</section>
