@@ -1,6 +1,12 @@
 name: Astro Deploy (Manual)
 
 on:
+#  push:
+#    branches:
+#      - main
+#  pull_request:
+#    branches:
+#      - main
   workflow_dispatch:
     inputs:
       deploy_env:
@@ -18,27 +24,15 @@ env:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-          cache: 'npm'
-
       - name: Install and build astro
-        uses: withastro/action@v1
-        with:
-          node-version: 'lts/*'
-          package-manager: npm
+        uses: withastro/action@v3
 
       - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2.5.1
+        uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
           known_hosts: unnecessary
