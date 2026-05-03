@@ -6,7 +6,7 @@ export default defineConfig({
   integrations: [myIntegration()],
   vite: {
     optimizeDeps: {
-      include: ['astro/toolbar'],
+      exclude: ['astro/runtime/client/dev-toolbar/entrypoint.js'],
     },
   },
 });

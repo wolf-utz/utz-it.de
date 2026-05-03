@@ -1,5 +1,5 @@
 ---
-import { useTranslations } from '../../i18n/utils';
+import { useTranslations, type TranslationKey } from '../../i18n/utils';
 import DividerWithIcon from '../misc/DividerWithIcon.astro';
 import services from '../../data/services.json';
 
@@ -20,10 +20,10 @@ const t = useTranslations('de');
             <div class="service-item mx-auto d-flex">
               <div class="service-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="text-center text-white">
-                  <p class="service-item-caption-title fs-2">{t(service.name)}</p>
+                  <p class="service-item-caption-title fs-2">{t(service.name as TranslationKey)}</p>
                   <p class="service-item-caption-description d-flex gap-1">
                     {service.keywords.map((keyword) => (
-                      <span class="badge bg-secondary">{t(keyword)}</span>
+                      <span class="badge bg-secondary">{t(keyword as TranslationKey)}</span>
                     ))}
                   </p>
                 </div>
@@ -34,7 +34,7 @@ const t = useTranslations('de');
                 width="200"
                 height="200"
                 loading="lazy"
-                alt={`Logo ${t(service.name)}`}
+                alt={`Logo ${t(service.name as TranslationKey)}`}
               />
             </div>
           </div>
