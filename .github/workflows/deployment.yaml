@@ -26,10 +26,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install and build astro
-        uses: withastro/action@v3
+        uses: withastro/action@v6
 
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
