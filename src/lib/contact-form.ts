@@ -22,7 +22,7 @@ import type { ContactFormApiResponse } from '../types';
     form?.classList.add('was-validated');
 
     if (form?.checkValidity() && !specialRequest.value) {
-      const contact: Contact = Contact.fromFromData(new FormData(<HTMLFormElement>form));
+      const contact: Contact = Contact.fromFormData(new FormData(<HTMLFormElement>form));
       const formElements = <HTMLFormElement[]>Array.from(form?.elements || []);
       // Disable all form elements.
       formElements.forEach((formElement) => (formElement.disabled = true));

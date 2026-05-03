@@ -35,11 +35,11 @@ export default class Contact {
     this._message = value;
   }
 
-  public static fromFromData(formData: FormData): this {
-    return new this(
-      <String>(formData.get('email') || ''),
-      <String>(formData.get('message') || ''),
-      <String>(formData.get('name') || ''),
+  public static fromFormData(formData: FormData): Contact {
+    return new Contact(
+      <string>(formData.get('email') || ''),
+      <string>(formData.get('message') || ''),
+      <string>(formData.get('name') || ''),
     );
   }
 

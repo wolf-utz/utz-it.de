@@ -1,5 +1,5 @@
 ---
-import { useTranslations } from '../../i18n/utils';
+import { useTranslations, type TranslationKey } from '../../i18n/utils';
 import skills from '../../data/skills.json';
 const t = useTranslations('de');
 ---
@@ -24,7 +24,8 @@ const t = useTranslations('de');
                 src={skill.image}
                 width="200"
                 height="200"
-                alt={`Logo ${skill.name}`}
+                loading="lazy"
+                alt={`Logo ${t(skill.name as TranslationKey)}`}
               />
             </div>
           </div>
