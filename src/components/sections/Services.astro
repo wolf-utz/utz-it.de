@@ -33,7 +33,8 @@ const t = useTranslations('de');
                 src={service.image}
                 width="200"
                 height="200"
-                alt={`Logo ${service.name}`}
+                loading="lazy"
+                alt={`Logo ${t(service.name)}`}
               />
             </div>
           </div>

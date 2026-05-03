@@ -24,7 +24,8 @@ const t = useTranslations('de');
                 src={skill.image}
                 width="200"
                 height="200"
-                alt={`Logo ${skill.name}`}
+                loading="lazy"
+                alt={`Logo ${t(skill.name)}`}
               />
             </div>
           </div>
